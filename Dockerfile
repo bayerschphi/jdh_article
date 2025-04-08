@@ -5,4 +5,5 @@ WORKDIR $HOME
 RUN pip install --no-cache-dir jupyterlab-citation-manager
 COPY requirements.txt
 RUN pip install -r requirements.txt
+RUN apt-get update && apt-get install -y git
 ENTRYPOINT jupyter lab --allow-root
